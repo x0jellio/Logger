@@ -17,8 +17,10 @@ Python 2.7
 
 ###  Usage 
 
+```
 usage: log_parser.py [-h] --file FILE
                      {get_daily_requests,get_user_agents,get_ratio} ...
+```
 
 ###  Arguments:
 ```
