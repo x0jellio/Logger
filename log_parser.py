@@ -1,8 +1,8 @@
-import sys
 import collections
 import datetime
-import argparse
 import re
+import sys
+import argparse
 
 
 # See Readme.MD for usage 
@@ -73,7 +73,8 @@ def get_ratio():
         ratio = float(get_count) / (post_count)
 
         print "The total get_count is %s  and the total post_count is %s" % (get_count, post_count)
-        print "The ratio of gets to posts overall is %.2f" % round(ratio,2)
+        print "The ratio of gets to posts overall is %.2f" % round(ratio, 2)
+
 
 # setting up some positional arguments and subcommands here that can be called from the command line
 

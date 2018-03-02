@@ -14,6 +14,14 @@ This script takes a logfile as input and can output 1 of 3 things
 ### Prerequisites
 Python 2.7 
 
+Modules: 
+import collections
+import datetime
+import re
+import sys
+import argparse
+
+
 
 ###  Usage 
 
