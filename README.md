@@ -20,13 +20,13 @@ Python 2.7
 usage: log_parser.py [-h] --file FILE
                      {get_daily_requests,get_user_agents,get_ratio} ...
 
-positional arguments:
+# Arguments:
 
 get_daily_requests  Get total daily requests
 get_user_agents     Get top 3 user agents
 get_ratio           Get ratio of GETS/POSTS
 
-optional arguments:
+# Optional arguments:
   
    -h, --help            show this help message and exit
   --file FILE, -f FILE   Enter a filename 
