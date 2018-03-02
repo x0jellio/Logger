@@ -4,7 +4,6 @@ import re
 import sys
 import argparse
 
-
 # See Readme.MD for usage 
 # TODO: group user agents by day , count ratio of gets/posts per day per os
 
@@ -57,16 +56,14 @@ def get_ratio():
         try:
             for line in infile:
                 a_list.append(line.split())
-                total_requests = range(0, len(a_list))
-                get_count = 0
+            total_requests = range(0, len(a_list))
+            get_count = 0
+	    post_count = 0 
             for x in total_requests:
                 if get_regex.search(a_list[x][5]):
                     get_count = get_count + 1
-            post_count = 0
-            for x in total_requests:
-                if post_regex.search(a_list[x][5]):
+                elif post_regex.search(a_list[x][5]): 
                     post_count = post_count + 1
-
         except IOError:
             "Could not read logfile"
 
