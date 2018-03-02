@@ -4,9 +4,12 @@ import datetime
 import argparse
 import re 
 
-# todo: fix errors from printing to screen vs going to log 
-# group user agents by day 
-# count ratio of gets per day by OS 
+# See Readme.MD for usage 
+# TODO: group user agents by day , count ratio of gets/posts per day per os 
+
+
+# read in lines and select date filed, convert to string format, and add values to dictionary. Once values are in dictionary
+# sort dictionary in descending order. print sorted dictionary values to screen   
 
 def get_daily_requests():	
 	
@@ -26,6 +29,7 @@ def get_daily_requests():
 		for k,v in sorted_totals:
 			print  "Day: %s" %(k) + " " + "Total: %s " %(v)
 
+# get top 3 user agents from the log file using similar method described above 
 
 def get_user_agents():
 	
@@ -42,6 +46,8 @@ def get_user_agents():
 		
 		for k,v in sorted_agents[:3]:
 			print "User Agent: %s" %(k) + " " +  "Count : %s" %(v) 
+
+# just scanning the lines with simplex regex to get counts of GET/POSTS then calculating ratio at the end 
 
 def get_ratio():
 
@@ -66,6 +72,8 @@ def get_ratio():
         	
 	print  "The total get_count is %s  and the total post_count is %s" %(get_count,post_count)  
 	print  "The ratio of gets to posts overall is %s" %(ratio) 
+
+#setting up some positional arguments and subcommands here that can be called from the command line 
 
 def setup_args():
 	
