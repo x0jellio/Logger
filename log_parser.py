@@ -7,7 +7,7 @@ import argparse
 
 
 # See Readme.MD for usage
-# TODO: group user agents by day , count ratio of gets/posts per day per os
+# TODO: group user agents by day instead of overall  , count ratio of gets/posts per day per os 
 
 # read in lines and select date filed, convert to string format, and add values to dictionary.
 # once values are in dictionary sort dictionary in descending order. print sorted dictionary values to screen
@@ -38,11 +38,15 @@ def get_user_agents():
             try:
                 field = line.split()
                 user_agent = field[11]
+                date = field[3].strip('')
+                timestamp = datetime.datetime.strptime(date, '[%d/%b/%Y:%H:%M:%S').strftime('%d/%b/%Y')
                 agents_totals[user_agent] += 1
+                agents_totals[timestamp] += 1
                 sorted_agents = sorted(agents_totals.items(), key=lambda (k, v): v, reverse=True)
-            except IndexError:
-                print('Array out of bounds')
+            except ValueError:
+                print('Bad format found in the file.')
         for k, v in sorted_agents[:3]:
+            print "User Agent: %s" % (k) + " " + "Count : %s" % (v)
             print "User Agent: %s" % (k) + " " + "Count : %s" % (v)
 
 
