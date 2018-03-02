@@ -7,9 +7,6 @@ import re
 # todo: fix errors from printing to screen vs going to log 
 # group user agents by day 
 # count ratio of gets per day by OS 
-# add classes 
-
-
 
 def get_daily_requests():	
 	
@@ -23,7 +20,8 @@ def get_daily_requests():
         			daily_totals[timestamp] += 1
 				sorted_totals = sorted(daily_totals.items(), key = lambda(k,v): v, reverse=True)
 			except ValueError:
-				print('Bad date format found in the file.')
+				#print('Bad date format found in the file.')
+				pass
 	         	
 		for k,v in sorted_totals:
 			print  "Day: %s" %(k) + " " + "Total: %s " %(v)
@@ -67,6 +65,7 @@ def get_ratio():
 	ratio = get_count / post_count
         	
 	print  "The total get_count is %s  and the total post_count is %s" %(get_count,post_count)  
+	print  "The ratio of gets to posts overall is %s" %(ratio) 
 
 def setup_args():
 	
