@@ -42,6 +42,10 @@ get_ratio           Get ratio of GETS/POSTS
    -h, --help            show this help message and exit
   --file FILE, -f FILE   Enter a filename 
 
+### Example 
+```
+python log_parser.py -f sample.log get_daily_requests
+```
 
 ###  Acknowledgments
 

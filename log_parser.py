@@ -23,7 +23,7 @@ def get_daily_requests():
                 daily_totals[timestamp] += 1
                 sorted_totals = sorted(daily_totals.items(), key=lambda (k, v): v, reverse=True)
             except ValueError:
-                print('Bad date format found in the file.')
+                print('Warning: bad date format found in the file.')
                 pass
         for k, v in sorted_totals:
             print "Day: %s" % k + " " + "Total: %s " % v
