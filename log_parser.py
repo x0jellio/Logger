@@ -70,7 +70,7 @@ def get_ratio():
         except IOError:
             "Could not read logfile"
 
-        ratio = float(get_count) / (post_count)
+        ratio = float(get_count) / float(post_count)
 
         print "The total get_count is %s  and the total post_count is %s" % (get_count, post_count)
         print "The ratio of gets to posts overall is %.2f" % round(ratio, 2)
