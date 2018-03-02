@@ -66,10 +66,10 @@ def get_ratio():
         if post_regex.search(a_list[x][5]):
             post_count = post_count + 1
 
-    ratio = get_count / post_count
+    ratio = float(get_count) / (post_count)
 
     print "The total get_count is %s  and the total post_count is %s" % (get_count, post_count)
-    print "The ratio of gets to posts overall is %s" % ratio
+    print "The ratio of gets to posts overall is %.2f" % round(ratio,2)
 
 
 # setting up some positional arguments and subcommands here that can be called from the command line
