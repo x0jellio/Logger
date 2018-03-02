@@ -21,10 +21,10 @@ usage: log_parser.py [-h] --file FILE
                      {get_daily_requests,get_user_agents,get_ratio} ...
 
 positional arguments:
-    
-	get_daily_requests  Get total daily requests
-    	get_user_agents     Get top 3 user agents
-    	get_ratio           Get ratio of GETS/POSTS
+
+get_daily_requests  Get total daily requests
+get_user_agents     Get top 3 user agents
+get_ratio           Get ratio of GETS/POSTS
 
 optional arguments:
   
