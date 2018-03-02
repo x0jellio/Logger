@@ -38,20 +38,14 @@ def get_user_agents():
             try:
                 field = line.split()
                 user_agent = field[11]
-                date = field[3].strip('')
-                timestamp = datetime.datetime.strptime(date, '[%d/%b/%Y:%H:%M:%S').strftime('%d/%b/%Y')
                 agents_totals[user_agent] += 1
-                agents_totals[timestamp] += 1
                 sorted_agents = sorted(agents_totals.items(), key=lambda (k, v): v, reverse=True)
             except ValueError:
                 print('Bad format found in the file.')
         for k, v in sorted_agents[:3]:
             print "User Agent: %s" % (k) + " " + "Count : %s" % (v)
-            print "User Agent: %s" % (k) + " " + "Count : %s" % (v)
-
 
 # just scanning the lines with simplex regex to get counts of GET/POSTS then calculating ratio at the end
-
 
 def get_ratio():
     a_list = []
