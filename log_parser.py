@@ -52,25 +52,28 @@ def get_ratio():
     a_list = []
     get_regex = re.compile(r'GET')
     post_regex = re.compile(r'POST')
+
     with open(sys.argv[2]) as infile:
-        for line in infile:
-            a_list.append(line.split())
-    total_requests = range(0, len(a_list))
+        try:
+            for line in infile:
+                a_list.append(line.split())
+                total_requests = range(0, len(a_list))
+                get_count = 0
+            for x in total_requests:
+                if get_regex.search(a_list[x][5]):
+                    get_count = get_count + 1
+            post_count = 0
+            for x in total_requests:
+                if post_regex.search(a_list[x][5]):
+                    post_count = post_count + 1
 
-    get_count = 0
-    for x in total_requests:
-        if get_regex.search(a_list[x][5]):
-            get_count = get_count + 1
-    post_count = 0
-    for x in total_requests:
-        if post_regex.search(a_list[x][5]):
-            post_count = post_count + 1
+        except IOError:
+            "Could not read logfile"
 
-    ratio = float(get_count) / (post_count)
+        ratio = float(get_count) / (post_count)
 
-    print "The total get_count is %s  and the total post_count is %s" % (get_count, post_count)
-    print "The ratio of gets to posts overall is %.2f" % round(ratio,2)
-
+        print "The total get_count is %s  and the total post_count is %s" % (get_count, post_count)
+        print "The ratio of gets to posts overall is %.2f" % round(ratio,2)
 
 # setting up some positional arguments and subcommands here that can be called from the command line
 
